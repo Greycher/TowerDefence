@@ -1,17 +1,23 @@
 ﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private EnemyStats _stats;
+    [SerializeField] private Transform _visual;
     
     private Path _path;
     private GameManager _gameManager;
     private float _currentWayPoint;
     private float _speed;
     private float _health;
+    private Coroutine _slowingRoutine;
+    private bool _isDead;
 
     public Action<Enemy> OnDead { get; set; }
+    public bool IsFlyingUnit => _stats.IsFlyingUnit;
 
     public void Construct(GameManager gameManager, Path path)
     {
@@ -44,30 +50,66 @@ public class Enemy : MonoBehaviour
 
     public bool Damage(float damage)
     {
+        bool diedAfterDamage = false;
         if (_health <= 0)
         {
-            return false;
+            return diedAfterDamage;
         }
         
         _health -= damage;
         if (_health <= 0)
         {
+            diedAfterDamage = true;
             Kill();
-            return true;
         }
-
-        return false;
+        
+        return diedAfterDamage;
     }
 
     public void Kill()
     {
-        OnDead?.Invoke(this);
-        Destroy(gameObject);
+        if (!_isDead)
+        {
+            _isDead = true;
+            _gameManager.NotifyEnemyDead();
+            OnDead?.Invoke(this);
+            Destroy(gameObject);
+        }
     }
 
     public void IncreaseScoreAndGold()
     {
         _gameManager.AddScore(_stats.PrizeScoreAmount);
         _gameManager.AddGold(_stats.PrizeCoinAmount);
+    }
+
+    public void ApplySlow(float slowingRate, float slowDuration)
+    {
+        if (_slowingRoutine != null)
+        {
+            StopCoroutine(_slowingRoutine);
+        }
+        _slowingRoutine = StartCoroutine(SlowingRoutine(slowingRate, slowDuration));
+    }
+
+    private IEnumerator SlowingRoutine(float rate, float duration)
+    {
+        _speed = _stats.Speed * (1 - rate);
+        yield return new WaitForSeconds(duration);
+        _speed = _stats.Speed;
+    }
+
+    public Vector3 GetPosition()
+    {
+        return _visual.transform.position;
+    }
+
+    private void OnDestroy()
+    {
+        if (!_isDead)
+        {
+            _isDead = true;
+            OnDead?.Invoke(this);
+        }
     }
 }

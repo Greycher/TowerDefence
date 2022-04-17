@@ -8,9 +8,12 @@ public class TowerStats : ScriptableObject
     [SerializeField] private float _damage;
     [SerializeField] private float _fireRate;
     [SerializeField] private float _bulletSpeed;
-
+    [SerializeField] private bool _canTargetFlyingUnits;
+    
     public Bullet BulletPrefab => _bulletPrefab;
     public float Damage => _damage;
     public float FireRate => _fireRate;
     public float BulletSpeed => _bulletSpeed;
+
+    public bool CanTargetFlyingUnits => _canTargetFlyingUnits;
 }

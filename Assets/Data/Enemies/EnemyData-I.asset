@@ -13,4 +13,4 @@ MonoBehaviour:
   m_Name: EnemyData-I
   m_EditorClassIdentifier: 
   _enemyPrefab: {fileID: 5900653524795530217, guid: 08fe771b44ee1b949a188a9010db9b06, type: 3}
-  _spawnFrequency: 2
+  _spawnFrequency: 1

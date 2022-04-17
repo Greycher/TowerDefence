@@ -6,20 +6,13 @@ public class EnemySpawner : MonoBehaviour
 {
     [SerializeField] private GameManager _gameManager;
     [SerializeField] private Path _path;
-    [SerializeField] private EnemyData _enemyData;
-    [SerializeField] private int _amount;
 
     private Queue<EnemySpawnCommand> _spawnRoutines = new Queue<EnemySpawnCommand>();
     private bool _spawning;
-
-    private void Awake()
+    
+    public void Spawn(EnemyData enemyData, int count)
     {
-        Spawn(_enemyData, _amount);
-    }
-
-    public void Spawn(EnemyData enemyData, int amount)
-    {
-        var command = new EnemySpawnCommand(_gameManager, _path, enemyData, amount, OnSpawnComplete);
+        var command = new EnemySpawnCommand(_gameManager, _path, enemyData, count, OnSpawnComplete);
         if (_spawning)
         {
             _spawnRoutines.Enqueue(command);

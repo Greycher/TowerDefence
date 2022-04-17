@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deed16b7d46241e6890c6b6e4e35b28b, type: 3}
   m_Name: Tower-I
   m_EditorClassIdentifier: 
-  _towerPrefab: {fileID: 354519016441674869, guid: eb4a1068ff8166b40a4b89e5e34228fe, type: 3}
+  _towerPrefab: {fileID: 3061528033697281220, guid: eb4a1068ff8166b40a4b89e5e34228fe, type: 3}
   _gridIndicator: {fileID: 826578343779037567, guid: 7bd5f516eb328964f8c5aea5d0dc9e18, type: 3}
   _coinCostAmount: 10

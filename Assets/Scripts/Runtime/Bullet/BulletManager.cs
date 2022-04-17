@@ -24,6 +24,7 @@ public class BulletManager
     public BulletManager()
     {
         _allBulletParent = new GameObject("Bullets").transform;
+        UnityEngine.Object.DontDestroyOnLoad(_allBulletParent.gameObject);
     }
 
     public Bullet GetNewBullet(Bullet bulletPrefab, Vector3 pos, Quaternion rot)

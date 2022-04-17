@@ -9,10 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd4c9ecfe0824b27b108c5276a7e26a1, type: 3}
+  m_Script: {fileID: 11500000, guid: 393acf906ca84d3eaaa41c582f8ed76f, type: 3}
   m_Name: TowerStats-II
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 5728851136460551858, guid: b993d17445929304dac257e0bd8e7e95, type: 3}
   _damage: 0.25
   _fireRate: 4
   _bulletSpeed: 10
+  _canTargetFlyingUnits: 0
+  _slowingRate: 0.4
+  _slowDuration: 1

@@ -13,6 +13,7 @@ MonoBehaviour:
   m_Name: TowerStats-III
   m_EditorClassIdentifier: 
   _bulletPrefab: {fileID: 4542758995074477501, guid: edd463b0f497eca49b8c8a18e35769c7, type: 3}
-  _damage: 2
+  _damage: 3
   _fireRate: 0.5
   _bulletSpeed: 8
+  _canTargetFlyingUnits: 1

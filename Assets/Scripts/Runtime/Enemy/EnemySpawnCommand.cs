@@ -6,17 +6,17 @@ using UnityEngine;
 public class EnemySpawnCommand
 {
     private readonly EnemyData _enemyData;
-    private int _amount;
+    private int _count;
     private readonly Action _onComplete;
     private readonly GameManager _gameManager;
     private readonly Path _path;
 
-    public EnemySpawnCommand(GameManager gameManager, Path path, EnemyData enemyData, int amount, Action onComplete)
+    public EnemySpawnCommand(GameManager gameManager, Path path, EnemyData enemyData, int count, Action onComplete)
     {
         _gameManager = gameManager;
         _path = path;
         _enemyData = enemyData;
-        _amount = amount;
+        _count = count;
         _onComplete = onComplete;
     }
 
@@ -26,9 +26,9 @@ public class EnemySpawnCommand
         var rot = Quaternion.LookRotation(_path.GetPosition(0));
         var waitTime = 1 / _enemyData.SpawnFrequency;
 
-        while (_amount > 0)
+        while (_count > 0)
         {
-            _amount--;
+            _count--;
             var enemy = UnityEngine.Object.Instantiate(_enemyData.EnemyPrefab, pos, rot);
             enemy.Construct(_gameManager, _path);
             yield return new WaitForSeconds(waitTime);

@@ -1,9 +1,23 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class Base : MonoBehaviour
 {
+    [SerializeField] private GameManager _gameManager;
     [SerializeField] private int _health;
+    [SerializeField] private HealthUI _healthUI;
+
+    private void Awake()
+    {
+        UpdateHealthSafe();
+    }
+
+    private void UpdateHealthSafe()
+    {
+        if (_healthUI)
+        {
+            _healthUI.UpdateHealth(_health);
+        }
+    }
 
     private void OnTriggerEnter(Collider collider)
     {
@@ -13,8 +27,9 @@ public class Base : MonoBehaviour
             enemy.Kill();
             if (--_health == 0)
             {
-                SceneManager.LoadScene(1);
+                _gameManager.FailLevel();
             }
+            UpdateHealthSafe();
         }
     }
 }

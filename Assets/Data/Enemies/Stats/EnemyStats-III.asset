@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d2fadb539224ceeb0061fd0e261da82, type: 3}
   m_Name: EnemyStats-III
   m_EditorClassIdentifier: 
-  _speed: 3
-  _health: 6
+  _speed: 0.5
+  _health: 10
   _prizeCoinAmount: 4
   _prizeScoreAmount: 4
+  _isFlyingUnit: 0

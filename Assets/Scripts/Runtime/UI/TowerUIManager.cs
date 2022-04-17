@@ -1,4 +1,5 @@
 using System;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Assertions;
 using UnityEngine.EventSystems;
@@ -6,12 +7,16 @@ using UnityEngine.UI;
 
 public class TowerUIManager : MonoBehaviour, IPointerDownHandler
 {
+    [SerializeField] private GameManager _gameManager;
     [SerializeField] private Button _towerOneBtn;
     [SerializeField] private TowerData _towerOneData;
+    [SerializeField] private TextMeshProUGUI _towerOneCostLabel;
     [SerializeField] private Button _towerTwoBtn;
     [SerializeField] private TowerData _towerTwoData;
+    [SerializeField] private TextMeshProUGUI _towerTwoCostLabel;
     [SerializeField] private Button _towerThreeBtn;
     [SerializeField] private TowerData _towerThreeData;
+    [SerializeField] private TextMeshProUGUI _towerThreeCostLabel;
     [SerializeField] private LayerMask _gridLayerMask;
 
     private RaycastHit[] _hits = new RaycastHit[1];
@@ -22,7 +27,15 @@ public class TowerUIManager : MonoBehaviour, IPointerDownHandler
     
     private void Awake()
     {
+        UpdateCostLabels();
         RegisterEvents();
+    }
+
+    private void UpdateCostLabels()
+    {
+        _towerOneCostLabel.text = _towerOneData.CoinCostAmount.ToString();
+        _towerTwoCostLabel.text = _towerTwoData.CoinCostAmount.ToString();
+        _towerThreeCostLabel.text = _towerThreeData.CoinCostAmount.ToString();
     }
 
     private void Update()
@@ -53,18 +66,13 @@ public class TowerUIManager : MonoBehaviour, IPointerDownHandler
         {
             if (TryGetPointedCellInfo(out CellInfo cellInfo))
             {
-                if (!cellInfo.Blocked)
+                if (!cellInfo.Blocked && _gameManager.HasSuffiecentGold(_selectedTowerData.CoinCostAmount))
                 {
-                    //TODO look for gold
+                    _gameManager.RemoveGold(_selectedTowerData.CoinCostAmount);
                     cellInfo.GridSystem.SetCellBlocked(cellInfo.CellPosition, true);
-                    Instantiate(_selectedTowerData.BaseTowerPrefab, cellInfo.Center, Quaternion.identity);
+                    Instantiate(_selectedTowerData.TowerPrefab, cellInfo.Center, Quaternion.identity);
                     _selectedTowerData = null;
                     UpdateIndicator();
-                }
-                else
-                {
-                    //TODO Float blocked text
-                    
                 }
             }
         }

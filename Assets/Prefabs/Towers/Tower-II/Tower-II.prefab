@@ -67,9 +67,38 @@ PrefabInstance:
       propertyPath: _stats
       value: 
       objectReference: {fileID: 11400000, guid: a6662dff01d23754da6482c2eb4bc459, type: 2}
+    - target: {fileID: 6058394601980708323, guid: 7014ad01d2c810d4e828b438116f522a, type: 3}
+      propertyPath: _towerStats
+      value: 
+      objectReference: {fileID: 11400000, guid: c71d6096023b64147b573e572a45b6af, type: 2}
     - target: {fileID: 8828330045458681170, guid: 7014ad01d2c810d4e828b438116f522a, type: 3}
       propertyPath: _stats
       value: 
       objectReference: {fileID: 11400000, guid: a6662dff01d23754da6482c2eb4bc459, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6058394601980708323, guid: 7014ad01d2c810d4e828b438116f522a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7014ad01d2c810d4e828b438116f522a, type: 3}
+--- !u!1 &4599931665112890073 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4415919127317807788, guid: 7014ad01d2c810d4e828b438116f522a, type: 3}
+  m_PrefabInstance: {fileID: 188661312840956021}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8162323180336594621 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8347465723086915272, guid: 7014ad01d2c810d4e828b438116f522a, type: 3}
+  m_PrefabInstance: {fileID: 188661312840956021}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &722161927457715989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4599931665112890073}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: caef7dd42b41427ebf27bd514a13f142, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _bulletSpawnPosTransformation: {fileID: 8162323180336594621}
+  _slowingTowerStats: {fileID: 11400000, guid: bf81f03835b168348bbb0dea1106adf2, type: 2}

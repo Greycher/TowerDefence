@@ -204,7 +204,7 @@ SphereCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 8
+  m_Radius: 7
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &4415919127317807788
 GameObject:
@@ -269,5 +269,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 001a5d49094d446db061f4e84dadc76c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _stats: {fileID: 0}
   _bulletSpawnPosTransformation: {fileID: 8347465723086915272}
+  _towerStats: {fileID: 0}
