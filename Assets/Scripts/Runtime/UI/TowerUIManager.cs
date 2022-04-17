@@ -57,7 +57,7 @@ public class TowerUIManager : MonoBehaviour, IPointerDownHandler
                 {
                     //TODO look for gold
                     cellInfo.GridSystem.SetCellBlocked(cellInfo.CellPosition, true);
-                    Instantiate(_selectedTowerData.TowerPrefab, cellInfo.Center, Quaternion.identity);
+                    Instantiate(_selectedTowerData.BaseTowerPrefab, cellInfo.Center, Quaternion.identity);
                     _selectedTowerData = null;
                     UpdateIndicator();
                 }

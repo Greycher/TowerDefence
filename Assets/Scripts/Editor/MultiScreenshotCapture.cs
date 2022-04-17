@@ -573,7 +573,7 @@ namespace MultiScreenshotCaptureNamespace
 			string path;
 			do
 			{
-				path = Path.Combine( saveDirectory, string.Format( filename, ++fileIndex ) );
+				path = System.IO.Path.Combine( saveDirectory, string.Format( filename, ++fileIndex ) );
 			} while( File.Exists( path ) );
 
 			return path;

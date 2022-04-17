@@ -73,6 +73,10 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 995bc2ab7620ab341b92c83df7227335, type: 2}
+    - target: {fileID: 3031399414412320259, guid: 7014ad01d2c810d4e828b438116f522a, type: 3}
+      propertyPath: m_RootOrder
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4095969751096037893, guid: 7014ad01d2c810d4e828b438116f522a, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -125,7 +129,9 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 995bc2ab7620ab341b92c83df7227335, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8828330045458681170, guid: 7014ad01d2c810d4e828b438116f522a, type: 3}
+    - {fileID: 6058394601980708323, guid: 7014ad01d2c810d4e828b438116f522a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 7014ad01d2c810d4e828b438116f522a, type: 3}
 --- !u!1 &7628970772922049656 stripped
 GameObject:

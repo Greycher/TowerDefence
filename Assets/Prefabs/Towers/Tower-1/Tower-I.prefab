@@ -57,11 +57,19 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4415919127317807788, guid: 7014ad01d2c810d4e828b438116f522a, type: 3}
       propertyPath: m_Name
-      value: Tower-1
+      value: Tower-I
       objectReference: {fileID: 0}
     - target: {fileID: 4587591898878223295, guid: 7014ad01d2c810d4e828b438116f522a, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 2b7fd7cef55059a419eb84ee79b46e01, type: 2}
+    - target: {fileID: 6058394601980708323, guid: 7014ad01d2c810d4e828b438116f522a, type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 11400000, guid: d73efbbe630b0b24392387142adc5922, type: 2}
+    - target: {fileID: 8828330045458681170, guid: 7014ad01d2c810d4e828b438116f522a, type: 3}
+      propertyPath: _stats
+      value: 
+      objectReference: {fileID: 11400000, guid: d73efbbe630b0b24392387142adc5922, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7014ad01d2c810d4e828b438116f522a, type: 3}

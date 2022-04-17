@@ -146,7 +146,7 @@ public class GridSystem : MonoBehaviour
             Gizmos.color = oldColor;
         }
     }
-
+    
     public static GridSystem GetFromCollider(Collider collider)
     {
         return collider.transform.parent.GetComponent<GridSystem>();

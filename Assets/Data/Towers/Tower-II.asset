@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deed16b7d46241e6890c6b6e4e35b28b, type: 3}
   m_Name: Tower-II
   m_EditorClassIdentifier: 
-  TowerPrefab: {fileID: 8654446307425350951, guid: 69809f5a40217ce4cb4e74477a352d96, type: 3}
-  GridIndicator: {fileID: 2197227236843469071, guid: f1a896ce56ccc90458b1a7eb9a4d4741, type: 3}
-  Cost: 0
+  _towerPrefab: {fileID: 8654446307425350951, guid: 69809f5a40217ce4cb4e74477a352d96, type: 3}
+  _gridIndicator: {fileID: 2197227236843469071, guid: f1a896ce56ccc90458b1a7eb9a4d4741, type: 3}
+  _coinCostAmount: 20
